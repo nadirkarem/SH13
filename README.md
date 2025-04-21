@@ -45,9 +45,6 @@ Deux exécutables seront créés :
    ../client <IP_SERVEUR> 1234 <IP_CLIENT> <PORT_CLIENT> <TonNom>
    ```
 
-Ajoute juste sous **“## Exécution”** le bloc suivant pour donner un exemple concret :
-
-```markdown
 ### Exemple d’exécution
 
 **Terminal 1 : serveur**  
@@ -78,16 +75,40 @@ cd assets
 cd assets
 ../client 127.0.0.1 1234 127.0.0.1 1238 Nadir
 ```
-```
-
-Ça montre exactement les commandes à taper dans chaque terminal.
-```
 
 ## Utilisation rapide
 
 1. Clique **Connect** en haut à gauche.  
 2. Pose tes questions (sélectionne un objet ou un suspect, puis **GO**).  
 3. Accuse un joueur (sélectionne un nom, puis **GO**).
+
+## Poser des questions et accuser
+
+### 1) Poser une question globale (O) – “Qui a cet objet ?”
+
+1. Cliquez sur l’icône de l’objet dans la **ligne du haut**.  
+2. L’objet est surligné pour indiquer votre choix.  
+3. Cliquez sur **GO**.  
+4. Le serveur renvoie un message `V <id_joueur> <id_objet> <valeur>` pour chaque joueur :
+   - `<valeur> = 100` si le joueur possède au moins une carte avec cet objet, sinon `0`.
+
+### 2) Poser une question ciblée (S) – “Combien de cartes cet objet chez ce joueur ?”
+
+1. Cliquez sur l’icône de l’objet dans la **ligne du haut**.  
+2. Cliquez sur le nom du joueur dans la **liste en bas à gauche** pour le sélectionner.  
+3. Cliquez sur **GO**.  
+4. Le serveur renvoie un message `V <id_joueur> <id_objet> <nombre>` :
+   - `<nombre>` = nombre exact de cartes de cet objet chez le joueur ciblé.
+
+### 3) Accuser un suspect (G) – “C’est lui le coupable !”
+
+1. Cliquez sur le nom du suspect dans la **liste en bas à gauche** (sans cliquer sur la croix).  
+2. Cliquez sur **GO**.  
+3. Le serveur reçoit `G <votre_id> <id_suspect>` et affiche :
+   - “tu as faux” si vous vous trompez  
+   - “<Nom> a gagne” si vous trouvez le coupable  
+
+> **Astuce** : votre bouton **GO** n’est actif que lorsqu’il est **votre tour** (votre ligne est surlignée).
 
 ## Nettoyage
 
