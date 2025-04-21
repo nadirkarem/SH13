@@ -2,6 +2,7 @@
 
 ## Arborescence du dépôt
 
+```
 OS_USER/
     src/
         server.c       # serveur TCP
@@ -9,7 +10,7 @@ OS_USER/
     assets/            # images .png et police .ttf
     Makefile           # compile server + client
     README.md          # ce fichier
-
+```
 ## Prérequis
 
 - GCC (ou tout compilateur C compatible)
