@@ -52,7 +52,7 @@ Deux exécutables seront créés :
 ./server 1234
 ```
 
-**Terminal 2 : client – Talla**  
+**Terminal 2 : client – Farah**  
 ```bash
 cd assets
 ../client 127.0.0.1 1234 127.0.0.1 1235 Talla
